@@ -4,13 +4,14 @@
   "description": "Constants and utilities used in Starting Up.",
   "main": "dist/index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 9000 --inline --progress --profile --colors --watch --content-base src/ --mode development",
+    "start": "webpack-dev-server --port 9999 --inline --progress --profile --colors --watch --content-base src/ --mode development",
     "build": "webpack --config webpack.config.js --mode production",
+    "watch": "webpack --watch",
     "build.prod": "webpack --config webpack.config.js -p",
-    "build.esnext": "npm run build:types && npm run build:js",
+    "build.esnext": "yarn build:types && yarn build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
-    "build.all": "npm run build.prod && npm run build.esnext",
+    "build.all": "yarn build.prod && yarn build.esnext",
     "test": "karma start karma.config.js"
   },
   "keywords": [

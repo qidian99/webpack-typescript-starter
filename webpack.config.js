@@ -8,7 +8,7 @@ module.exports = {
     context: ROOT,
 
     entry: {
-        'main': './main.ts'
+        'index': './index.ts'
     },
     
     output: {
@@ -53,6 +53,10 @@ module.exports = {
     },
 
     devtool: 'cheap-module-source-map',
-    devServer: {}
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000
+    }
 };
 
